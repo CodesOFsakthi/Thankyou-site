@@ -1,0 +1,166 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+  overflow: hidden;
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+input {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  width: 80%;
+  margin-bottom: 15px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #ff6b81;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #ff4757;
+}
+
+.error {
+  color: red;
+  font-size: 0.9rem;
+  display: none;
+}
+
+/* Login Page Styling */
+.login-container {
+  background: white;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+input {
+  width: 100%;
+}
+
+button {
+  width: 100%;
+}
+
+/* Thank You Page Styling */
+.thankyou-container {
+  background: white;
+  padding: 40px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  position: relative;
+  z-index: 10;
+}
+
+.trainer-photo {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-top: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.message {
+  font-size: 1.2rem;
+  color: #555;
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+/* Balloons Effect */
+.balloons {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.balloon {
+  position: absolute;
+  width: 60px;
+  height: 80px;
+  background: radial-gradient(circle at 50% 50%, #ff7eb3, #ff496c);
+  border-radius: 50%;
+  animation: floatBalloon 6s ease-in-out infinite;
+}
+
+.balloon::after {
+  content: '';
+  position: absolute;
+  width: 8px;
+  height: 20px;
+  background: #ff496c;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 3px;
+}
+
+@keyframes floatBalloon {
+  0% {
+    transform: translateY(100vh) translateX(0);
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-200px) translateX(calc(-50px + 100px * random()));
+    opacity: 0;
+  }
+}
+
+/* Random positions for balloons */
+.balloon1 {
+  left: 20%;
+  animation-delay: 0s;
+}
+
+.balloon2 {
+  left: 50%;
+  animation-delay: 2s;
+}
+
+.balloon3 {
+  left: 70%;
+  animation-delay: 4s;
+}
+
+.balloon4 {
+  left: 85%;
+  animation-delay: 6s;
+}
+
+.balloon5 {
+  left: 10%;
+  animation-delay: 8s;
+}
